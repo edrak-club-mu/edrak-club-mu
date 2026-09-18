@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي إدراك - الصفحة الرئيسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="images/edrak-logo.png" alt="شعار نادي إدراك" class="club-logo">
+        <h1>نادي إدراك للتميز الفكري والمهاري</h1>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <nav>
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="about.html">عن النادي</a>
+        <a href="events.html">الفعاليات</a>
+        <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <a href="https://linktr.ee/Idrak5?utm_source=linktree_profile_share&ltsid=dbc7c393-b0a0-43a0-900a-65e90b9eab62" target="_blank" class="cta-button">جميع حساباتنا</a>
+</header>
+
+<main>
+    <!-- عداد الفعالية القادمة -->
+    <section class="event-countdown" aria-label="العد التنازلي للفعالية القادمة">
+        <div class="countdown-intro">
+            <span class="countdown-kicker"><i class="fas fa-calendar-check"></i> الفعالية القادمة</span>
+            <h2>28 سبتمبر 2026</h2>
+            <p data-countdown-status>الوقت المتبقي على الفعالية القادمة</p>
+        </div>
+        <div class="countdown-grid">
+            <div class="countdown-box"><strong data-countdown="days">00</strong><span>يوم</span></div>
+            <div class="countdown-box"><strong data-countdown="hours">00</strong><span>ساعة</span></div>
+            <div class="countdown-box"><strong data-countdown="minutes">00</strong><span>دقيقة</span></div>
+            <div class="countdown-box"><strong data-countdown="seconds">00</strong><span>ثانية</span></div>
+        </div>
+    </section>
+
+    <section class="hero home-hero">
+        <div class="hero-content">
+            <span class="eyebrow">معًا.. نصنع أثرًا</span>
+            <h2>مرحبًا بك في نادي إدراك</h2>
+            <p class="hero-vision"><strong>نحو وعيٍ يُدرك، وأثرٍ يُصنع.</strong></p>
+            <p class="hero-note">بيئة طلابية لتنمية المهارات، تعزيز الوعي، ودعم المبادرات والأفكار.</p>
+            <a href="about.html" class="cta-button">اكتشف النادي</a>
+        </div>
+        <img src="images/edrak-logo.png" alt="شعار نادي إدراك" class="hero-brand-logo">
+    </section>
+
+    <!-- نبذة + أهداف النادي -->
+    <section class="home-info-grid">
+        <article class="info-card about-card">
+            <div class="section-icon"><i class="fas fa-book-open"></i></div>
+            <h3>نبذة عن النادي</h3>
+            <p>نادي إدراك هو نادٍ طلابي بجامعة المجمعة يُعنى بنشر الوعي، وتنمية مهارات الطلبة، وتعزيز الصحة النفسية، من خلال برامج وفعاليات ومبادرات نوعية تسهم في بناء طالب أكثر وعيًا وتوازنًا وقدرة على التطور والتأثير.</p>
+            <p class="info-highlight">نحو وعيٍ يُدرك، وأثرٍ يُصنع.</p>
+        </article>
+
+        <article class="info-card goals-card">
+            <div class="section-icon sage-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>أهداف النادي</h3>
+            <ul class="goals-list">
+                <li>نشر الوعي بين الطلبة</li>
+                <li>تعزيز الصحة النفسية</li>
+                <li>تنمية مهارات الطلبة</li>
+                <li>دعم المبادرات والأفكار الطلابية</li>
+                <li>تشجيع المشاركة والتطوع</li>
+                <li>توفير بيئة محفزة للإبداع</li>
+                <li>تعزيز العمل الجماعي</li>
+                <li>صناعة أثر إيجابي في المجتمع الجامعي</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- أعضاء الشهر ونظام النقاط (حالة الانتظار) -->
+    <section class="monthly-section">
+        <div class="section-heading-row">
+            <div>
+                <span class="eyebrow">التقدير والتحفيز</span>
+                <h3>أعضاء الشهر والترتيب</h3>
+                <p>نحتفي بشغف وتميز أعضائنا المستمر.</p>
+            </div>
+            <div class="crown-icon"><i class="fas fa-crown"></i></div>
+        </div>
+        
+        <div class="empty-state-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.3); margin-top: 15px;">
+            <i class="fas fa-user-clock" style="font-size: 2.5rem; margin-bottom: 10px; color: #e0e0e0;"></i>
+            <h4 style="margin-bottom: 5px;">سيتم الإعلان عن أعضاء الشهر ونقاط التميّز قريباً</h4>
+            <p style="opacity: 0.8; font-size: 0.95rem;">نحن بصدد تقييم الأداء وإقفال جدول النقاط لهذا الشهر، انتظرونا!</p>
+        </div>
+    </section>
+
+    <!-- الهيكل الإداري بدون أرقام التواصل -->
+    <section class="org-section">
+        <div class="section-heading-center">
+            <span class="eyebrow">فريق نادي إدراك</span>
+            <h3>الهيكل الإداري للنادي</h3>
+        </div>
+        <div class="org-chart-tree">
+            <div class="org-level supervisor-level">
+                <article class="org-node supervisor">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>مشرف النادي</h4>
+                    <p>الدكتور عمار العمار</p>
+                </article>
+            </div>
+            <div class="org-connector vertical"></div>
+            <div class="org-level top-leaders">
+                <article class="org-node leader">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>رئيس النادي</h4>
+                    <p>تركي الشمري</p>
+                </article>
+                <article class="org-node leader">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>نائبة النادي</h4>
+                    <p>وداد المطيري</p>
+                </article>
+            </div>
+            <div class="org-connector branch"></div>
+            <div class="org-level operations-level">
+                <article class="org-node role-gold">
+                    <h4>مسؤول التقارير</h4>
+                    <p>حسين الاربش</p>
+                </article>
+                <article class="org-node role-gold">
+                    <h4>مسؤولة الساعات التطوعية</h4>
+                    <p>سارا القحطاني</p>
+                </article>
+                <article class="org-node role-sage">
+                    <h4>مسؤول اللجان التنفيذية</h4>
+                    <p>حيدر المرعي</p>
+                </article>
+                <article class="org-node role-sage">
+                    <h4>مسؤول الجودة</h4>
+                    <p>عبدالله الشهري</p>
+                </article>
+                <article class="org-node role-gold">
+                    <h4>مسؤول العلاقات العامة</h4>
+                    <p>عبدالله العتيبي</p>
+                </article>
+            </div>
+            <div class="org-connector branch"></div>
+            <div class="org-level committees-level">
+                <div class="committee-column">
+                    <article class="org-node role-sage">
+                        <h4>رئيسة الموارد البشرية</h4>
+                        <p>نور الزهيري</p>
+                    </article>
+                    <article class="org-node role-sage deputy">
+                        <h4>نائب الموارد البشرية</h4>
+                        <p>احمد حمد</p>
+                    </article>
+                </div>
+                <div class="committee-column">
+                    <article class="org-node role-sage">
+                        <h4>رئيسة لجنة التنظيم</h4>
+                        <p>جنى الماطر</p>
+                    </article>
+                    <article class="org-node role-sage deputy">
+                        <h4>نائب لجنة التنظيم</h4>
+                        <p>علياء العتيبي</p>
+                    </article>
+                </div>
+                <div class="committee-column">
+                    <article class="org-node role-sage">
+                        <h4>رئيسة لجنة التصميم وكتابة المحتوى</h4>
+                        <p>أسيل المغيرة</p>
+                    </article>
+                    <article class="org-node role-sage deputy">
+                        <h4>نائب لجنة التصميم وكتابة المحتوى</h4>
+                        <p>اسماء المطيري</p>
+                    </article>
+                </div>
+                <div class="committee-column">
+                    <article class="org-node role-sage">
+                        <h4>رئيسة لجنة الإعلام</h4>
+                        <p>وديان المطيري</p>
+                    </article>
+                    <article class="org-node role-sage deputy">
+                        <h4>نائب لجنة الإعلام</h4>
+                        <p>داليا المطيري</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-banner">
+        <div>
+            <span>كل نقطة.. خطوة نحو صناعة الأثر</span>
+            <h3>نصنع أثرًا يبدأ من الطالب ويصل إلى المجتمع.</h3>
+        </div>
+        <i class="fas fa-seedling"></i>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 نادي إدراك للتميز الفكري والمهاري - جامعة المجمعة.</p>
+    <p><strong>للتواصل:</strong> <a href="mailto:edrkclubmu@gmail.com" class="footer-email">edrkclubmu@gmail.com</a></p>
+    <div class="social-links"><a href="https://x.com/EdrkClubMU" target="_blank">X (Twitter)</a></div>
+</footer>
+
+<nav class="mobile-bottom-nav">
+    <a href="index.html" class="active"><i class="fas fa-home"></i><span>الرئيسية</span></a>
+    <a href="about.html"><i class="fas fa-info-circle"></i><span>عن النادي</span></a>
+    <a href="events.html"><i class="fas fa-calendar-alt"></i><span>الفعاليات</span></a>
+    <a href="contact.html"><i class="fas fa-envelope"></i><span>تواصل</span></a>
+</nav>
+<script src="countdown.js"></script>
+</body>
+</html>
