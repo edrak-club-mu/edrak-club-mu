@@ -1,0 +1,940 @@
+/* ==================================== */
+/* 1. الإعدادات الأساسية والثوابت (Variables) */
+/* ==================================== */
+:root {
+    --primary-dark: #3A454E;
+    --accent-orange: #FDB04C; /* اللون البرتقالي المعتمد */
+    --bg-white: #ffffff;
+    --bg-light: #f4f4f4;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-dark);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-orange);
+}
+
+main {
+    padding: 30px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🌟 تنسيق شريط التنقل السفلي (مخفي افتراضياً) 🌟 */
+.mobile-bottom-nav {
+    display: none; /* مخفي على شاشات سطح المكتب */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px; 
+    background-color: var(--primary-dark);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #4a5761;
+}
+
+.mobile-bottom-nav a {
+    color: white !important;
+    text-align: center;
+    flex: 1;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    transition: color 0.2s, background-color 0.3s;
+}
+
+.mobile-bottom-nav a:hover {
+    background-color: #4a5761; 
+}
+
+.mobile-bottom-nav a i {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.mobile-bottom-nav a.active {
+    color: var(--accent-orange) !important;
+}
+
+.mobile-bottom-nav a.active span {
+    font-weight: bold;
+}
+
+
+/* ==================================== */
+/* 2. تنسيق شريط التنقل (Header) */
+/* ==================================== */
+header {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.club-logo {
+    height: 40px;
+    margin-left: 15px;
+}
+
+header h1 {
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    padding: 8px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a.active::after,
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-orange);
+    transition: width 0.3s ease;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+.cta-button {
+    background-color: var(--accent-orange);
+    color: var(--primary-dark) !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffb74d;
+}
+
+/* 🌟 خاص بالتصميم الجديد للقائمة المنسدلة على الجوال 🌟 */
+#menu-toggle {
+    display: none; /* إخفاء مربع الاختيار */
+}
+
+.menu-icon {
+    display: none; /* افتراضياً مخفي على شاشات سطح المكتب */
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    margin-left: 15px;
+}
+
+/* ==================================== */
+/* 3. تنسيق الأقسام الرئيسية... */
+/* ==================================== */
+
+.hero {
+    text-align: center;
+    padding: 60px 40px; 
+    background-color: var(--bg-white); 
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    
+    /* 🛠️ إزالة التنسيقات المتعلقة بالصورة كخلفية كما طُلب */
+    background-image: none; 
+    padding-bottom: 60px; /* تعديل الـ padding بعد إزالة الخلفية */
+}
+
+/* 🛠️ تنسيق الصورة الرئيسية 1.jpg للتأكد من أنها تظهر بشكل طبيعي */
+.hero-main-image {
+    max-width: 100%; /* لضمان استجابتها */
+    height: auto;
+    margin-bottom: 20px; /* مسافة أسفل الصورة */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0; /* إزالة أي حواف دائرية */
+    box-shadow: none; /* إزالة أي تظليل */
+    border: none; /* إزالة أي حدود */
+}
+
+/* 🚀 التنسيق الجديد لشعار النادي داخل قسم Hero (للتطبيق حسب الطلب) */
+.hero .hero-main-image {
+    /* تحديد عرض الشعار في شاشات سطح المكتب */
+    max-width: 300px;
+    height: auto;
+    /* تطبيق الإطار المربع البرتقالي */
+    border: 5px solid var(--accent-orange); 
+    padding: 15px; /* مسافة داخلية بين الشعار والإطار */
+    border-radius: 20px; /* جعل الحواف دائرية قليلاً */
+    display: block; 
+    margin: 20px auto; /* توسيط الشعار أفقياً وترك مسافة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للإبراز */
+}
+/* ----------------------------------------------------------- */
+
+
+.hero h2 {
+    font-size: 38px;
+    color: var(--accent-orange); 
+    margin-bottom: 15px;
+    /* 🚀 التعديل المطلوب: لضمان بقاء النص على سطر واحد حتى في الجوال */
+    white-space: nowrap; 
+}
+.hero p {
+    font-size: 20px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+/* تنسيقات إضافية لفقرات قسم Hero */
+.hero-vision {
+    font-size: 20px;
+    color: #3A454E; /* لون أغمق للرؤية */
+    margin-bottom: 10px !important; /* مسافة أصغر بين الرؤية والملاحظة */
+}
+
+.hero-note {
+    font-size: 14px;
+    color: #888; /* لون رمادي فاتح للملاحظة */
+    margin-bottom: 25px !important; /* مسافة كافية قبل زر CTA */
+    font-style: italic; /* لجعلها مميزة كملاحظة */
+}
+/* ==================================== */
+/* 4. تنسيق البطاقات (Cards) والمحتوى المتعدد الأعمدة */
+/* ==================================== */
+.card-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--bg-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    color: var(--accent-orange); 
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card.event-card-with-grid {
+    flex: 1; 
+    min-width: 350px;
+}
+
+.event-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.event-photo-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.event-photo-grid img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* ==================================== */
+/* 5. تنسيق الهيكل التنظيمي (Org Chart) */
+/* ==================================== */
+.org-chart {
+    padding-top: 40px;
+    margin-top: 40px;
+}
+
+.org-chart h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--accent-orange); 
+}
+
+.org-chart .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 17px;
+    color: #555;
+}
+
+.org-leadership {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 60px; 
+}
+
+.role-box {
+    padding: 12px 25px; 
+    border-radius: 25px; 
+    font-weight: bold;
+    text-align: center;
+    min-width: 280px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+}
+
+.role-box:hover {
+    transform: translateY(-5px); 
+}
+
+.primary-role {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.primary-role p {
+    font-size: 14px;
+    margin-bottom: 3px;
+    opacity: 0.8;
+}
+
+.primary-role h4 {
+    color: white;
+    font-size: 22px;
+    margin: 0;
+}
+
+.committees-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px; 
+    justify-content: center;
+}
+
+.committee {
+    width: 280px; 
+    text-align: center;
+    border: 1px solid var(--bg-light);
+    border-radius: 10px; 
+    padding-bottom: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08); 
+    background-color: var(--bg-white);
+    overflow: hidden;
+}
+
+.committee-head {
+    padding: 12px;
+    border-radius: 9px 9px 0 0; 
+    font-weight: bold;
+    margin-bottom: 15px; 
+    font-size: 18px;
+}
+
+.accent-role {
+    background-color: var(--accent-orange);
+    color: var(--primary-dark);
+}
+
+.committee-members {
+    list-style: none; 
+    padding: 0 10px;
+    text-align: center;
+}
+
+.committee-members li {
+    padding: 5px 0;
+    color: var(--primary-dark);
+    font-size: 15px;
+}
+
+
+/* ==================================== */
+/* 6. تنسيق نموذج التواصل (Contact Form) */
+/* ==================================== */
+.join-form, .contact-info {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-title {
+    color: var(--accent-orange);
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--primary-dark);
+    padding-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.join-form .cta-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px 0;
+    font-size: 18px;
+}
+
+/* ==================================== */
+/* 7. تنسيق بطاقة شخصية الأسبوع (Weekly Personality) */
+/* ==================================== */
+.weekly-personality {
+    margin-bottom: 40px;
+}
+
+.personality-card {
+    display: flex;
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 30px;
+    flex-shrink: 0;
+    border: 5px solid var(--accent-orange);
+}
+
+.person-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person-details {
+    flex-grow: 1;
+}
+
+.person-details h4 {
+    color: var(--accent-orange); 
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.person-details p {
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.achievements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements-list li {
+    padding: 8px 0;
+    border-right: 4px solid var(--accent-orange);
+    padding-right: 15px;
+    margin-bottom: 8px;
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* ==================================== */
+/* 8. تنسيق الفوتر (Footer) */
+/* ==================================== */
+footer {
+    background-color: var(--primary-dark);
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--accent-orange) !important;
+}
+
+/* ==================================== */
+/* 9. تنسيقات الاستجابة للشاشات الصغيرة (الجوال) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    
+    /* 🚀 الترتيب على الجوال لشعار Hero */
+    .hero .hero-main-image {
+        /* تقليل عرض الشعار على شاشات الجوال لضمان الترتيب */
+        max-width: 80%; /* جعله يشغل 80% من عرض الشاشة */
+        border-width: 3px; /* تقليل سمك الإطار قليلاً */
+        padding: 10px;
+        margin: 15px auto;
+    }
+    
+    .hero h2 {
+        font-size: 1.5em; /* ضبط حجم العنوان الرئيسي على الجوال ليناسب الشعار */
+    }
+    /* ----------------------------------------------------------- */
+
+    /* 9.1 إظهار أيقونة القائمة */
+    .menu-icon {
+        display: block;
+        order: 1; 
+    }
+    
+    header {
+        flex-wrap: wrap; 
+        padding: 10px 15px;
+    }
+    
+    .logo-container {
+        order: 0; 
+    }
+
+    /* 🛠️ التعديل الحاسم: تصغير حجم عنوان الصفحة على الجوال (لحل مشكلة التكبير) */
+    .page-header h2 {
+        font-size: 24px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    
+    /* 9.2 تنسيق زر الـ CTA على الجوال */
+    .cta-button {
+        width: calc(100% - 30px); 
+        order: 3; 
+        /* تحديد موقع الزر في أسفل الـ header */
+        margin-top: 10px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    
+    /* 🌟 التعديل الحاسم: إظهار الشريط السفلي 🌟 */
+    .mobile-bottom-nav {
+        display: flex; /* إظهار الشريط السفلي الثابت */
+    }
+    
+    /* 🌟 التعديل الحاسم: إضافة مسافة سفلية للجسم لكي لا يغطي الشريط المحتوى 🌟 */
+    body {
+        padding-bottom: 60px; /* يجب أن تكون بنفس ارتفاع شريط التنقل السفلي */
+    }
+
+    /* 🌟 إظهار القائمة المنسدلة (الهامبرغر) 🌟 */
+    nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        order: 2; 
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        background-color: #4a5761; 
+    }
+    
+    /* إظهار القائمة عند النقر على الهامبرغر */
+    #menu-toggle:checked ~ nav {
+        max-height: 300px; 
+        padding: 10px 0;
+    }
+    
+    nav a {
+        display: block; 
+        font-size: 16px;
+        margin: 0; 
+        padding: 10px 20px;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.1); 
+    }
+    
+    nav a.active::after, nav a:hover::after {
+        display: none; 
+    }
+
+    /* باقي التنسيقات كما هي... */
+    main {
+        padding: 20px 10px; 
+    }
+    /* ... (تنسيقات الجوال الأخرى) ... */
+
+    .card-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .personality-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .image-placeholder {
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+
+    .event-photo-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}/* ==================================== */
+/* 9. تنسيقات الاستجابة للشاشات الصغيرة (الجوال) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    
+    /* 🚀 الترتيب على الجوال لشعار Hero */
+    .hero .hero-main-image {
+        /* تقليل عرض الشعار على شاشات الجوال لضمان الترتيب */
+        max-width: 80%; /* جعله يشغل 80% من عرض الشاشة */
+        border-width: 3px; /* تقليل سمك الإطار قليلاً */
+        padding: 10px;
+        margin: 15px auto;
+    }
+    
+    .hero h2 {
+        /* 🛠️ تعديل حجم الخط لضمان ظهوره في سطر واحد على أضيق الشاشات */
+        font-size: 1.2em; 
+        white-space: nowrap; /* تأكيد عدم كسر السطر */
+    }
+    /* ----------------------------------------------------------- */
+
+    /* ... باقي التنسيقات ... */
+}
+/* ====================================
+   هوية نادي إدراك الجديدة
+   مستوحاة من دليل الهوية المرفق
+   ==================================== */
+:root {
+    --primary-dark: #1F3048;
+    --primary-deep: #18263A;
+    --accent-gold: #F2C45D;
+    --accent-sage: #9AB9AE;
+    --cream: #F8F5ED;
+    --surface: #FFFFFF;
+    --surface-soft: #F3F5F3;
+    --text-color: #243247;
+    --muted: #687487;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "IBM Plex Sans Arabic", "29LT Adir", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(180deg, #fbfaf7 0%, var(--surface-soft) 100%);
+}
+
+header {
+    background: var(--primary-dark);
+    padding: 14px clamp(18px, 4vw, 55px);
+    border-bottom: 4px solid var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(24,38,58,.14);
+}
+
+.logo-container { gap: 14px; }
+.club-logo { height: 52px; width: 112px; object-fit: contain; margin-left: 0; }
+header h1 { font-size: clamp(15px, 1.7vw, 20px); font-weight: 700; }
+nav a { margin-right: 18px; font-weight: 600; }
+nav a.active::after, nav a:hover::after { background: var(--accent-gold); height: 3px; }
+
+.cta-button {
+    background: var(--accent-gold);
+    color: var(--primary-deep) !important;
+    border-radius: 10px;
+    padding: 10px 17px;
+    box-shadow: 0 5px 14px rgba(242,196,93,.22);
+}
+.cta-button:hover { background: #f6d37d; transform: translateY(-1px); }
+
+main { max-width: 1240px; padding: 38px clamp(18px, 4vw, 50px); }
+
+.hero, .page-header {
+    background: var(--surface);
+    border: 1px solid rgba(31,48,72,.08);
+    border-radius: 24px;
+    box-shadow: 0 14px 40px rgba(31,48,72,.08);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 35px;
+    background: linear-gradient(135deg, #fff 0%, #fffdf8 62%, #edf4f1 100%);
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(154,185,174,.18);
+    left: -80px; top: -90px;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(242,196,93,.18);
+    right: -55px; bottom: -65px;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero-main-image.hero-logo-display {
+    width: min(330px, 70vw);
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 22px;
+}
+.hero h2, .page-header h2 { color: var(--primary-dark); font-weight: 800; }
+.hero-vision { color: var(--muted); max-width: 760px; margin: 12px auto 18px; }
+.hero-note { color: #6f9489; font-weight: 700; }
+
+h3.section-title, .achievements h3, .weekly-personality h3, .club-vision h3, .org-chart h3, .past-events h3 {
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.card, .personality-card, .join-form, .role-box, .committee {
+    background: var(--surface);
+    border: 1px solid rgba(31,48,72,.08);
+    box-shadow: 0 10px 28px rgba(31,48,72,.07);
+    border-radius: 18px;
+}
+.card { border-top: 4px solid var(--accent-sage); }
+.card:nth-child(even) { border-top-color: var(--accent-gold); }
+.card h4 { color: var(--primary-dark); }
+.card p, .personality-card p, .section-description { color: var(--muted); }
+
+.page-header { border-right: 5px solid var(--accent-gold); }
+
+.role-box.primary-role { background: var(--primary-dark); color: white; border: none; }
+.role-box.primary-role h4 { color: white; }
+.accent-role, .committee-head { background: var(--accent-sage) !important; color: var(--primary-deep) !important; }
+
+footer {
+    background: var(--primary-deep) !important;
+    border-top: 5px solid var(--accent-sage);
+}
+footer a:hover { color: var(--accent-gold) !important; }
+
+.mobile-bottom-nav { background: var(--primary-dark); border-top: 3px solid var(--accent-gold); }
+.mobile-bottom-nav a.active { color: var(--accent-gold) !important; }
+
+input, textarea, select {
+    border: 1px solid #d6ddd9 !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+}
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-sage) !important;
+    box-shadow: 0 0 0 3px rgba(154,185,174,.2) !important;
+}
+
+@media (max-width: 700px) {
+    header { padding: 11px 14px; }
+    .club-logo { width: 86px; height: 42px; }
+    header h1 { font-size: 14px; }
+    .hero { padding: 45px 20px; border-radius: 18px; }
+    .hero-main-image.hero-logo-display { width: min(270px, 82vw); }
+    main { padding: 22px 14px 80px; }
+}
+
+/* ====================================
+   إضافات الصفحة الرئيسية الجديدة
+   ==================================== */
+.event-countdown {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 28px;
+    align-items: center;
+    margin: 0 auto 28px;
+    padding: 26px 30px;
+    border-radius: 24px;
+    background: linear-gradient(120deg, var(--primary-dark), #29415d);
+    color: #fff;
+    box-shadow: 0 14px 35px rgba(31,48,72,.16);
+    position: relative;
+    overflow: hidden;
+}
+.event-countdown::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    left: -90px;
+    bottom: -130px;
+    background: rgba(154,185,174,.16);
+}
+.countdown-intro { position: relative; z-index: 1; }
+.countdown-kicker { color: var(--accent-gold); font-weight: 700; }
+.countdown-intro h2 { font-size: 30px; margin: 5px 0; }
+.countdown-intro p { color: rgba(255,255,255,.82); }
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; position: relative; z-index: 1; }
+.countdown-box {
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 16px;
+    padding: 17px 10px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+.countdown-box strong { display: block; font-size: 36px; line-height: 1; color: #fff; }
+.countdown-box span { display: block; margin-top: 8px; color: var(--accent-sage); font-weight: 600; }
+
+.home-hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; min-height: 340px; }
+.home-hero .hero-content { position: relative; z-index: 2; flex: 1; }
+.home-hero .hero-brand-logo { width: min(330px, 34vw); height: auto; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 15px 25px rgba(31,48,72,.12)); }
+.eyebrow { color: #6e9b8b; font-weight: 700; letter-spacing: .2px; }
+.home-hero h2 { color: var(--primary-dark); font-size: clamp(34px, 5vw, 58px); margin: 8px 0 10px; }
+.home-hero .hero-vision { color: #5d8b7c; font-size: 22px; }
+
+.home-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 28px 0; }
+.info-card { background: var(--surface); border-radius: 22px; padding: 28px; border: 1px solid rgba(31,48,72,.07); box-shadow: 0 10px 28px rgba(31,48,72,.07); }
+.info-card h3 { color: var(--primary-dark); font-size: 26px; margin: 8px 0 14px; }
+.info-card p { color: #596778; font-size: 16px; line-height: 2; }
+.section-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: rgba(242,196,93,.22); color: #b4831e; font-size: 22px; }
+.sage-icon { background: rgba(154,185,174,.28); color: #5d897a; }
+.info-highlight { color: #5d897a !important; font-weight: 700; margin-top: 10px; }
+.goals-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+.goals-list li { color: #425368; padding: 8px 0 8px 0; position: relative; padding-right: 25px; }
+.goals-list li::before { content: "✓"; position: absolute; right: 0; color: #6d9b8b; font-weight: 800; }
+
+.monthly-section { margin: 28px 0; padding: 30px; border-radius: 24px; background: var(--primary-dark); color: #fff; overflow: hidden; position: relative; }
+.section-heading-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.section-heading-row h3, .section-heading-center h3 { font-size: 31px; color: #fff; margin: 4px 0; }
+.section-heading-row p { color: rgba(255,255,255,.7); }
+.crown-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: rgba(242,196,93,.17); color: var(--accent-gold); font-size: 23px; }
+.members-points-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.member-point-card { background: rgba(255,255,255,.06); border: 1px solid rgba(154,185,174,.45); border-radius: 17px; padding: 18px 12px; text-align: center; position: relative; }
+.member-point-card.featured { border-color: var(--accent-gold); box-shadow: inset 0 0 0 1px rgba(242,196,93,.2); }
+.rank-badge { display: inline-block; color: var(--accent-gold); font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.member-avatar { width: 58px; height: 58px; margin: 0 auto 10px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-sage); color: #fff; font-size: 22px; }
+.member-point-card h4 { font-size: 17px; margin-bottom: 6px; }
+.member-point-card strong { font-size: 25px; color: #fff; }
+.member-point-card small { font-size: 13px; color: var(--accent-sage); }
+.editable-note { margin: 18px 0 0; text-align: center; color: rgba(255,255,255,.62); font-size: 13px; }
+
+.org-section { margin: 34px 0; padding: 32px; background: rgba(255,255,255,.75); border-radius: 24px; border: 1px solid rgba(31,48,72,.07); }
+.section-heading-center { text-align: center; margin-bottom: 25px; }
+.section-heading-center h3 { color: var(--primary-dark); }
+.org-new-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
+.org-card { background: #fff; border: 1px solid rgba(154,185,174,.45); border-radius: 15px; padding: 17px 12px; text-align: center; transition: transform .25s, box-shadow .25s; }
+.org-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(31,48,72,.08); }
+.org-card.leader { border-top: 4px solid var(--accent-gold); }
+.org-card > i { width: 42px; height: 42px; display: grid; place-items: center; margin: 0 auto 8px; border-radius: 50%; background: rgba(154,185,174,.22); color: #5e8c7d; }
+.org-card h4 { color: var(--primary-dark); font-size: 16px; margin-bottom: 4px; }
+.org-card p { color: #687487; font-size: 13px; min-height: 40px; }
+.org-card a { color: #5d897a; font-size: 12px; direction: ltr; display: inline-block; margin-top: 6px; }
+
+.impact-banner { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 10px; padding: 28px 34px; border-radius: 24px; background: linear-gradient(120deg, #dce9e4, #f8f5ed); color: var(--primary-dark); }
+.impact-banner span { color: #5d897a; font-weight: 700; }
+.impact-banner h3 { margin-top: 4px; font-size: 24px; }
+.impact-banner > i { font-size: 48px; color: #6d9b8b; }
+
+@media (max-width: 1000px) {
+    .org-new-grid { grid-template-columns: repeat(3, 1fr); }
+    .members-points-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .event-countdown { grid-template-columns: 1fr; padding: 22px 16px; }
+    .countdown-grid { gap: 7px; }
+    .countdown-box { padding: 13px 5px; }
+    .countdown-box strong { font-size: 26px; }
+    .home-hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+    .home-hero .hero-brand-logo { width: 210px; order: -1; }
+    .home-info-grid { grid-template-columns: 1fr; }
+    .goals-list { grid-template-columns: 1fr; }
+    .members-points-grid { grid-template-columns: 1fr 1fr; }
+    .org-section { padding: 20px 12px; }
+    .org-new-grid { grid-template-columns: 1fr 1fr; }
+    .org-card p { min-height: auto; }
+    .impact-banner { padding: 22px; }
+    .impact-banner h3 { font-size: 18px; }
+    .impact-banner > i { font-size: 34px; }
+}
+@media (max-width: 430px) {
+    .countdown-intro h2 { font-size: 24px; }
+    .countdown-box strong { font-size: 23px; }
+    .countdown-box span { font-size: 11px; }
+    .members-points-grid, .org-new-grid { grid-template-columns: 1fr; }
+}
+
+
+/* الهيكل الإداري — مطابق لفكرة المخطط التنظيمي المرسل */
+.org-chart-tree{position:relative;margin:34px auto 10px;padding:10px 0 28px;max-width:1160px}
+.org-level{display:flex;justify-content:center;align-items:stretch;gap:22px;position:relative;z-index:2}
+.org-node{background:#fff;border:2px solid #9ab9ae;border-radius:14px;padding:15px 16px;min-width:190px;text-align:center;box-shadow:0 8px 20px rgba(31,48,72,.07);position:relative}
+.org-node h4{color:#1f3048;margin:0 0 6px;font-size:18px;font-weight:800;line-height:1.45}.org-node p{color:#27364a;margin:0 0 7px;font-size:16px;font-weight:600}.org-node a{color:#6d887f;text-decoration:none;font-size:13px}.org-node i{color:#6d9488;margin-bottom:7px;font-size:18px}.org-node.supervisor{border-color:#1f3048;min-width:250px;background:#fff}.org-node.supervisor h4{font-size:20px}.org-node.supervisor p{font-size:17px}.org-node.leader{border-color:#1f3048;background:#fff}.org-node.leader i{color:#1f3048}.role-gold{border-color:#f2c45d}.role-gold i{color:#d19b2e}.role-sage{border-color:#9ab9ae}.deputy{margin-top:14px}
+.org-connector{position:relative;height:48px;z-index:1}.org-connector.vertical:before{content:"";position:absolute;top:0;left:50%;height:100%;border-left:3px solid #1f3048}.org-connector.branch:before{content:"";position:absolute;top:0;left:7%;right:7%;border-top:3px solid #1f3048}.org-connector.branch:after{content:"";position:absolute;top:0;left:50%;height:100%;border-left:3px solid #1f3048}
+.operations-level{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.operations-level .org-node{min-width:0;padding:13px 9px}.operations-level .org-node h4{font-size:15px}.operations-level .org-node p{font-size:14px}
+.committees-level{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}.committee-column{position:relative}.committee-column:before{content:"";position:absolute;top:-26px;left:50%;height:26px;border-left:3px solid #1f3048}.committee-column .org-node{min-width:0}.committee-column .org-node h4{font-size:15px}.committee-column .org-node p{font-size:14px}
+@media(max-width:900px){.operations-level{grid-template-columns:repeat(2,1fr)}.committees-level{grid-template-columns:repeat(2,1fr)}.org-connector.branch:before{left:12%;right:12%}}
+@media(max-width:600px){.org-level.top-leaders{flex-direction:column;align-items:center}.org-level.top-leaders .org-node{width:min(310px,92vw)}.operations-level,.committees-level{grid-template-columns:1fr}.org-connector.branch{height:35px}.org-chart-tree{overflow:hidden}.org-node{min-width:0;width:100%}.supervisor-level .org-node{width:min(300px,92vw)}}
