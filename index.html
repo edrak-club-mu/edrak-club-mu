@@ -14,7 +14,7 @@
 
 <header>
     <div class="logo-container">
-        <img src="images/edrak-logo.png" alt="شعار نادي إدراك" class="club-logo">
+        <img src="images/header-logo.png" alt="شعار نادي إدراك" class="club-logo">
         <h1>نادي إدراك للتميز الفكري والمهاري</h1>
     </div>
     <input type="checkbox" id="menu-toggle">
@@ -29,7 +29,7 @@
 </header>
 
 <main>
-    <!-- عداد الفعالية القادمة -->
+    <!-- كاونتر الفعاليه القادمه-->
     <section class="event-countdown" aria-label="العد التنازلي للفعالية القادمة">
         <div class="countdown-intro">
             <span class="countdown-kicker"><i class="fas fa-calendar-check"></i> الفعالية القادمة</span>
@@ -80,25 +80,70 @@
         </article>
     </section>
 
-    <!-- أعضاء الشهر ونظام النقاط (حالة الانتظار) -->
+    <!-- أعضاء الشهر المميزين (سبتمبر) -->
     <section class="monthly-section">
         <div class="section-heading-row">
             <div>
                 <span class="eyebrow">التقدير والتحفيز</span>
-                <h3>أعضاء الشهر والترتيب</h3>
+                <h3>مميزين الشهر في إدراك (سبتمبر)</h3>
                 <p>نحتفي بشغف وتميز أعضائنا المستمر.</p>
             </div>
             <div class="crown-icon"><i class="fas fa-crown"></i></div>
         </div>
         
-        <div class="empty-state-card" style="text-align: center; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.3); margin-top: 15px;">
-            <i class="fas fa-user-clock" style="font-size: 2.5rem; margin-bottom: 10px; color: #e0e0e0;"></i>
-            <h4 style="margin-bottom: 5px;">سيتم الإعلان عن أعضاء الشهر ونقاط التميّز قريباً</h4>
-            <p style="opacity: 0.8; font-size: 0.95rem;">نحن بصدد تقييم الأداء وإقفال جدول النقاط لهذا الشهر، انتظرونا!</p>
+        <div class="featured-members-container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 20px;">
+            <!-- الفائزون الرئيسيون -->
+            <div class="top-honors-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <div class="org-node role-gold" style="text-align: center; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);">
+                    <h4 style="margin-bottom: 5px; color: #d4af37;">رئيس الشهر</h4>
+                    <p style="font-size: 1.1rem; font-weight: bold; margin: 0;">وديان المطيري</p>
+                    <small style="opacity: 0.8;">رئيسة الإعلام</small>
+                </div>
+                
+                <div class="org-node role-gold" style="text-align: center; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);">
+                    <h4 style="margin-bottom: 5px; color: #d4af37;">نائب الشهر</h4>
+                    <p style="font-size: 1.1rem; font-weight: bold; margin: 0;">داليا المطيري</p>
+                    <small style="opacity: 0.8;">نائبة الإعلام</small>
+                </div>
+
+                <div class="org-node role-sage" style="text-align: center; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);">
+                    <h4 style="margin-bottom: 5px; color: #8fa89b;">لجنة الشهر</h4>
+                    <p style="font-size: 1.1rem; font-weight: bold; margin: 0;">لجنة التصميم وكتابة المحتوى</p>
+                </div>
+
+                <div class="org-node role-sage" style="text-align: center; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);">
+                    <h4 style="margin-bottom: 5px; color: #8fa89b;">عضو الشهر</h4>
+                    <p style="font-size: 1.1rem; font-weight: bold; margin: 0;">ورود اليابسي</p>
+                    <small style="opacity: 0.8;">لجنة الإعلام</small>
+                </div>
+            </div>
+
+            <!-- الأعضاء المميزين -->
+            <div class="honored-members-section" style="text-align: center;">
+                <h4 style="font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; display: inline-block;">الأعضاء المميزين</h4>
+                <div class="honored-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong>في الهرف</strong><br>
+                        <small style="opacity: 0.7;">لجنة الموارد البشرية</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong>معتز النويصر</strong><br>
+                        <small style="opacity: 0.7;">لجنة الإعلام والمونتاج</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong>ندى الشبانات</strong><br>
+                        <small style="opacity: 0.7;">لجنة التصميم وكتابة المحتوى</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong>هلا العتيبي</strong><br>
+                        <small style="opacity: 0.7;">لجنة التنظيم</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- الهيكل الإداري بدون أرقام التواصل -->
+    <!-- الهيكل الإداري-->
     <section class="org-section">
         <div class="section-heading-center">
             <span class="eyebrow">فريق نادي إدراك</span>
